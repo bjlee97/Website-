@@ -1,0 +1,161 @@
+html {
+    height: 100%;
+}
+
+body{
+    background: #05A499;
+    background: -moz-linear-gradient(-45deg, #05A499 0%, #11CB45 50%, #7BFFC9 100%);
+    background: -webkit-linear-gradient(-45deg, #05A499 0%, #11CB45 50%, #7BFFC9 100%);
+    background: linear-gradient(135deg, #05A499 0%, #11CB45 50%, #7BFFC9 100%);
+}
+
+.intro1{
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 50px;
+    letter-spacing: 0px;
+    word-spacing: -1.8px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+}
+
+.intro2{
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 30px;
+    letter-spacing: 0px;
+    word-spacing: -1.8px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+.pp{
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 16px;
+    letter-spacing: 0px;
+    word-spacing: -2px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none; 
+    text-align: center;
+}
+
+
+.link{
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 20px;
+    letter-spacing: 0px;
+    word-spacing: -2.4px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+}
+
+  
+a {
+    opacity: 1;
+}
+  
+a:hover {
+    opacity: .5;
+}
+
+#tran{
+    float: right;
+}
+  
+  /* Typewriter effect 1 */
+  @keyframes typing {
+    0.0000%, 27.3488% { content: ""; }
+    1.1395%, 26.2093% { content: "w"; }
+    2.2791%, 25.0698% { content: "we"; }
+    3.4186%, 23.9302% { content: "web"; }
+    4.5581%, 22.7907% { content: "web"; }
+    5.6977%, 21.6512% { content: "webs"; }
+    6.8372%, 20.5116% { content: "websi"; }
+    7.9767%, 19.3721% { content: "websit"; }
+    9.1163%, 18.2326% { content: "website"; }
+    10.2558%, 17.0930% { content: "website!"; }
+  
+    30.7674%, 51.2791% { content: "w"; }
+    31.9070%, 50.1395% { content: "we"; }
+    33.0465%, 49.0000% { content: "web"; }
+    34.1860%, 47.8605% { content: "webs"; }
+    35.3256%, 46.7209% { content: "websi"; }
+    36.4651%, 45.5814% { content: "websit"; }
+    37.6047%, 44.4419% { content: "website!"; }
+  
+    54.6977%, 75.2093% { content: "w"; }
+    55.8372%, 74.0698% { content: "we"; }
+    56.9767%, 72.9302% { content: "web"; }
+    58.1163%, 71.7907% { content: "webs"; }
+    59.2558%, 70.6512% { content: "websi"; }
+    60.3953%, 69.5116% { content: "websit"; }
+    61.5349%, 68.3721% { content: "website!"; }
+  
+    78.6279%, 96.8605% { content: "w"; }
+    79.7674%, 95.7209% { content: "we"; }
+    80.9070%, 94.5814% { content: "web"; }
+    82.0465%, 93.4419% { content: "webs"; }
+    83.1860%, 92.3023% { content: "websi"; }
+    84.3256%, 91.1628% { content: "website!"; }
+  
+
+    
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  .typewriter {
+    --caret: currentcolor;
+  }
+  
+  .typewriter::before {
+    content: "";
+    animation: typing 13.5s infinite;
+  }
+  
+  .typewriter::after {
+    content: "";
+    border-right: 1px solid var(--caret);
+    animation: blink 0.5s linear infinite;
+  }
+
+
+.pe{
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 20px;
+    letter-spacing: 0px;
+    word-spacing: -2.4px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: underline solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: left;
+}
+
+#gif{
+    text-align: center
+}
+  
+  
+
