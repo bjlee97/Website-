@@ -3,16 +3,49 @@
     <head>
         <title>Our Funky HTML Page </title>
         <meta name="description" content="Our first page">
+        <link rel="stylesheet" href="style.css" />
     </head>
 <body>
-    <h1>Welcome to my HTML page!</h1>
-    <p>My name is Brandon, I'm a computer engineering student at UC Santa Cruz</p>
-    <a href = "https://github.com/bjlee97"><img src="github.png" alt="GitHub"></a>
+    <h1 class = 'intro1'>Welcome to my&nbsp;<span class="typewriter"></span>
+    <p class = 'pp'>My name is Brandon, I'm a computer engineering student at UC Santa Cruz. In my free time, I enjoy playing tennis and cooking. I am interested in learning more about machine learning and AI.</p>
+    <a id = 'tran' href = "https://github.com/bjlee97"><img src="github.png" alt="GitHub" width="100" height="100"></a>
+    <a id = 'tran' href = "https://www.linkedin.com/in/brandonjyolee/"><img src="linkedin.png" alt="linkedin" width="100" height="100"></a>
 
-    <h2>Projects</h2>
+    <h2 class = 'intro2'>Projects</h2>
     <dl>
-        <dt><a href="https://github.com/siddu1998/resilience_backend_do">ARG Backend</a></dt>
-        <dd>Research volunteering at UCSC GUII Lab</dd>
+        <dt class = 'link'><a href="https://bjlee97.github.io/WeatherApp/">Weather App</a></dt>
+        <dd class = 'pp'>Tells you the weather? Made using HTML, CSS, and Javascript</dd>
+        <dt class = 'link'><a href="https://github.com/playlux/Unity">ARG Backend</a></dt>
+        <dd class = 'pp'>Contributor to Unity player backend</dd>
     </dl>
+
+    <h2 class = 'intro2'>Work Experience</h2>
+    <dl>
+        <dt class = 'pe'>Research Assistant at UCSC Gamer User Interface Lab</dt>
+        <dd class = 'pp'>Researching gameplay user interactions to develop game elements such as a player progress bar.
+             Worked closlely with team members to construct a backend database to store player information and inventory.
+        </dd>
+        
+        <dt class = 'pe'>Tennis Coach</dt>
+        <dd class = 'pp'>Facilitated group lessons for beginner to intermediate level players and provided individual coaching on
+            technique and form
+        </dd>
+
+        <dt class = 'pe'>Server Shift Lead</dt>
+        <dd class = 'pp'>Managed an average of 7 tables, and covered up to 12 at once as needed due to volume or short staffing, while
+            modeling outstanding customer service
+        </dd>
+
+        <dt class = 'pe'>Coding Instructor</dt>
+        <dd class = 'pp'>Coded and graded assignments in Scratch designed for beginner to intermediate level students interested in
+            computer science
+        </dd>
+
+
+    </dl>
+    <img alt="cat" id="gif" src="cat.gif">
+    <p class = 'pp'>Thank you for visiting! </p>
 </body>
+
+
 </html> 
