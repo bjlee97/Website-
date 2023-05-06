@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Number guessing game</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+      
+      .form input[type="number"] {
+        width: 200px;
+      }
+
+      .lastResult {
+        color: white;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Number guessing game</h1>
+
+    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+
+    <div class="form">
+      <label for="guessField">Enter a guess: </label>
+      <input type="number" min="1" max="100" required id="guessField" class="guessField">
+      <input type="submit" value="Submit guess" class="guessSubmit">
+    </div>
+
+    <div class="resultParas">
+      <p class="guesses"></p>
+      <p class="lastResult"></p>
+      <p class="lowOrHi"></p>
+    </div>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;               //random num - target value
+        let guesses = document.querySelector('.guesses');                     
+        let lastResult = document.querySelector('.lastResult');
+        let lowOrHi = document.querySelector('.lowOrHi');
+        let guessSubmit = document.querySelector('.guessSubmit');
+        let guessField = document.querySelector('.guessField');
+      
+        let guessCount = 1;                                                   //count default
+        let resetButton;                                                      //reset button
+
+        function checkGuess() {                                               //function to test guess
+          let userGuess = Number(guessField.value);                           //get value for inputed number
+
+          if (guessCount === 1) {
+              guesses.textContent = 'Previous guesses: ';                     //show previous guesses
+          }
+          
+          guesses.textContent += userGuess + ' ';                             //add guesses to list
+          
+          if (userGuess === randomNumber) {                                   //if number match
+            lastResult.textContent = 'Congratulations! You got it right!';    //add congrats messafe
+            lastResult.style.backgroundColor = 'green';                       //change background if correct
+            lowOrHi.textContent = '';                                         //no output if correct
+            setGameOver();                                                    //reset game function
+          }
+
+          else if (guessCount === 10) {                                       //limit 10 guesses
+            lastResult.textContent = '!!!GAME OVER!!!';                       //game over text
+            lastResult.style.backgroundColor = 'red';                         //change background to red
+            lowOrHi.textContent = '';                                         //no output for final value
+            setGameOver();                                                    //reset game
+          }
+
+          else{                                                               //still guesses remainging   
+            lastResult.textContent = 'Wrong!';                                //wrong value
+            lastResult.style.backgroundColor = 'red';                         //background red
+          } 
+
+          if(userGuess < randomNumber) {                                    //if guess is too low out put message
+            lowOrHi.textContent = 'Last guess was too low!';
+          }
+          
+          else if (userGuess > randomNumber){
+            lowOrHi.textContent = 'Last guess was too high!';
+          }
+
+          guessCount++;                                                       //increment count
+          guessField.value = '';                                              //get rid of text in box
+          guessField.focus();                                                 //select textbox to type
+        }
+
+      guessSubmit.addEventListener('click', checkGuess);                    //outside function to reduce error
+
+      function setGameOver() {                                              //game over function
+        guessField.disabled = true;                                         //disable submit guess
+        guessSubmit.disabled = true;                                        //disable submit button
+        resetButton = document.createElement('button');                     //new button
+        resetButton.textContent = 'Start new game';                         //start new game text
+        document.body.appendChild(resetButton);                             //show reset button
+        resetButton.addEventListener('click', resetGame);                   
+      }
+
+      function resetGame() {                                                //reset game function
+        guessCount = 1;                                                     //reset guess count to 0
+        const resetParas = document.querySelectorAll('.resultParas p');     
+        for (const resetPara of resetParas) {                               //set text content to be blank
+        resetPara.textContent = '';
+        }
+        resetButton.parentNode.removeChild(resetButton);                    // Removes HTML element
+        guessField.disabled = false;                                        //disables field 
+        guessSubmit.disabled = false;                                       //disables guests
+        guessField.value = '';                                              //clear check balue
+        guessField.focus();                                                 //lock the buttons
+        lastResult.style.backgroundColor = 'white';                         //set background back to white
+        randomNumber = Math.floor(Math.random() * 100) + 1;                 //create a new random number
+      }
+
+    </script>
+  </body>
+</html>
+
